@@ -1,11 +1,8 @@
 import React from "react"
+import { InputList } from "./components/input-list"
 
 function App() {
-  return (
-    <div>
-      <input />
-    </div>
-  )
+  return <InputList />
 }
 
 export default App
