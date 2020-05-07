@@ -1,4 +1,4 @@
-import { SetWhatAction, SetWhenAction, SetWhereAction, SetWhoAction } from "./actions"
+import { ResetStore, SetSentence, SetWhatAction, SetWhenAction, SetWhereAction, SetWhoAction } from "./actions"
 
 const setWho = (data: string): SetWhoAction => {
   return {
@@ -28,9 +28,23 @@ const setWhere = (data: string): SetWhereAction => {
   }
 }
 
+const setSentence = (): SetSentence => {
+  return {
+    type: "SET_SENTENCE",
+  }
+}
+
+const resetStore = (): ResetStore => {
+  return {
+    type: "RESET_STORE",
+  }
+}
+
 export const actionCreators = {
   setWho,
   setWhat,
   setWhen,
   setWhere,
+  setSentence,
+  resetStore,
 }

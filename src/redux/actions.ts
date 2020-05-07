@@ -17,3 +17,11 @@ export type SetWhereAction = {
   type: "SET_WHERE"
   data: string
 }
+
+export type SetSentence = {
+  type: "SET_SENTENCE"
+}
+
+export type ResetStore = {
+  type: "RESET_STORE"
+}
