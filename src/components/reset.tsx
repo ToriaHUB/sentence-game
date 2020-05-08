@@ -8,6 +8,7 @@ export const ResetButton: React.FC = () => {
   const dispatch = useDispatch()
 
   const sentence = useSelector<ReduxState, string>((state) => state.sentence)
+
   /**
    * Resets redux store to the initial state
    */
