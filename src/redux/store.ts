@@ -1,7 +1,9 @@
 import { createStore } from "redux"
 import { reducer } from "./reducer"
 
-// @ts-ignore
+/**
+ * Redux store
+ */
 export const store = createStore(
   reducer,
   // @ts-ignore

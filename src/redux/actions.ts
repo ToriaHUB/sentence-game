@@ -25,3 +25,5 @@ export type SetSentence = {
 export type ResetStore = {
   type: "RESET_STORE"
 }
+
+export type AppActions = SetWhoAction | SetWhatAction | SetWhenAction | SetWhereAction | SetSentence | ResetStore

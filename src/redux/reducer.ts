@@ -1,4 +1,5 @@
-import { ResetStore, SetSentence, SetWhatAction, SetWhenAction, SetWhereAction, SetWhoAction } from "./actions"
+import { AppActions } from "./actions"
+import { constructSentence } from "../helpers/helpers"
 
 const initialState: ReduxState = {
   who: "",
@@ -16,10 +17,7 @@ export type ReduxState = {
   sentence: string
 }
 
-export const reducer = (
-  state = initialState,
-  action: SetWhoAction | SetWhatAction | SetWhenAction | SetWhereAction | SetSentence | ResetStore
-): ReduxState => {
+export const reducer = (state = initialState, action: AppActions): ReduxState => {
   switch (action.type) {
     case "SET_WHO":
       return { ...state, who: action.data }
@@ -30,10 +28,11 @@ export const reducer = (
     case "SET_WHERE":
       return { ...state, where: action.data }
     case "SET_SENTENCE":
-      const sentence = `${state.who} ${state.what} ${state.where} ${state.when}`
+      const sentence = constructSentence({ who: state.who, what: state.what, when: state.when, where: state.where })
       return { ...state, sentence: sentence }
     case "RESET_STORE":
       return { ...initialState }
+
     default:
       return state
   }
